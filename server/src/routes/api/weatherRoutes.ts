@@ -44,10 +44,10 @@ router.post('/', async (req: Request, res: Response) => {
 
 // TODO: GET search history
 router.get('/history', async (_req: Request, res: Response) => {
-  console.log("Hit History Route");
+  // console.log("Hit History Route");
   try {
     const history = await HistoryService.getCities();
-    console.log("History: ", history);
+    // console.log("History: ", history);
     res.status(200).json(history);
   } catch (error) {
     console.error('Error fetching search history:', error);

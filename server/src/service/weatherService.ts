@@ -79,7 +79,9 @@ class WeatherService {
       const response = await axios.get(query);
       
       // console.log('Weather data:', response);
-      const weatherAndForecast = this.buildForecastArray(this.parseCurrentWeather(response.data.list[0]),response.data.list);
+      const currentWeather = this.parseCurrentWeather(response.data.list[0]);
+      console.log('Current weather:', currentWeather);
+      const weatherAndForecast = this.buildForecastArray(currentWeather, response.data.list);
 
       return weatherAndForecast;
     } catch (error) {
@@ -93,13 +95,13 @@ class WeatherService {
   private parseCurrentWeather(response: any): Weather {
     console.log("Response is", response);
     return new Weather(
-      response.weather.temp,
+      response.main.temp,
       response.weather.humidity,
       response.weather[0].description,
       this.city,
       response.weather.date,
       response.weather[0].icon,
-
+ 
   
     );
   }
@@ -118,6 +120,7 @@ class WeatherService {
       this.city = city;
       const coordinates = await this.fetchAndDestructureLocationData();
       const weatherData = await this.fetchWeatherData(coordinates);
+      // console.log('Weather data:', weatherData);
       return weatherData;
     } catch (error) {
       console.error('Error getting weather for city:', error);

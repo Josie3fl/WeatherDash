@@ -1,10 +1,14 @@
 [
   {
-    "id": "83082f65-13aa-4113-8b12-f6bb7207e964",
-    "name": "Chicago"
+    "id": "5d6c0b52-e61a-4404-9799-bae3b5349595",
+    "name": "Orlando"
   },
   {
-    "id": "4a965d95-a9e2-46cf-b253-f56cc960cb58",
-    "name": "Orlando"
+    "id": "a434c02e-80e8-4df5-9a6e-a914e8a45edb",
+    "name": "San Diego"
+  },
+  {
+    "id": "9e3a2c03-1e23-4ba5-a9c3-cb9437b04d1c",
+    "name": "Chicago"
   }
 ]
