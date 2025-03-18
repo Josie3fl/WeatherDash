@@ -16,15 +16,17 @@ class Weather {
   city: string;
   date: Dayjs|string;
   icon: string;
+  windSpeed: number;
 
 
-  constructor(temp: number, humidity: number, description: string, city: string, date: string, icon: string) {
+  constructor(temp: number, humidity: number, description: string, city: string, date: string, icon: string, windSpeed: number) {
     this.temp = temp;
     this.humidity = humidity;
     this.description = description;
     this.city = city;
     this.date = date;
     this.icon = icon;
+    this.windSpeed = windSpeed;
   }
 }
 
@@ -102,8 +104,7 @@ class WeatherService {
       this.city,
       dayjs.unix(response.dt).format('dddd, MMMM D, YYYY'),
       response.weather[0].icon,
- 
-  
+      response.wind.speed
     );
   }
   // TODO: Complete buildForecastArray method
@@ -124,7 +125,8 @@ class WeatherService {
       description: data.weather[0].description,
       date: dayjs(data.dt_txt).format('dddd, MMMM D, YYYY'),
       icon: data.weather[0].icon,
-      city: ''
+      city: '',
+      windSpeed: data.wind.speed
       
     };
     forecast.push(newForecast);
