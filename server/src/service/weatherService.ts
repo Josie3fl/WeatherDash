@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import axios from 'axios';
+import dayjs, {type Dayjs} from 'dayjs';
 dotenv.config();
 
 // TODO: Define an interface for the Coordinates object
@@ -13,7 +14,7 @@ class Weather {
   humidity: number;
   description: string;
   city: string;
-  date: string;
+  date: Dayjs|string;
   icon: string;
 
 
@@ -80,9 +81,9 @@ class WeatherService {
       
       // console.log('Weather data:', response);
       const currentWeather = this.parseCurrentWeather(response.data.list[0]);
-      console.log('Current weather:', currentWeather);
+      // console.log('Current weather:', currentWeather);
       const weatherAndForecast = this.buildForecastArray(currentWeather, response.data.list);
-
+     console.log("Weather and forecast is", weatherAndForecast);
       return weatherAndForecast;
     } catch (error) {
       console.error('Error fetching weather data:', error);
@@ -93,13 +94,13 @@ class WeatherService {
   // TODO: Build parseCurrentWeather method
   // private parseCurrentWeather(response: any) {}
   private parseCurrentWeather(response: any): Weather {
-    console.log("Response is", response);
+    // console.log("Response is", response);
     return new Weather(
       response.main.temp,
-      response.weather.humidity,
+      response.main.humidity,
       response.weather[0].description,
       this.city,
-      response.weather.date,
+      dayjs.unix(response.dt).format('dddd, MMMM D, YYYY'),
       response.weather[0].icon,
  
   
@@ -110,7 +111,25 @@ class WeatherService {
   private buildForecastArray(currentWeather: Weather, weatherData: any[]): Weather[] {
     // console.log("WeaterDate.list is", weatherData[0]);
     const forecast : Weather[] = [currentWeather];
-   weatherData.filter((data: any) => {return data })
+    console.log("Next 5 days weather is", weatherData);
+   const oneForecastADay=weatherData.filter((data: any) => {return data.dt_txt.includes('09:00:00')
+   })
+   
+   
+   for (let i=0; i< oneForecastADay.length && i < 5; i++) {
+    const data = oneForecastADay[i];
+    const newForecast: Weather = {
+      temp: data.main.temp,
+      humidity: data.main.humidity,
+      description: data.weather[0].description,
+      date: dayjs(data.dt_txt).format('dddd, MMMM D, YYYY'),
+      icon: data.weather[0].icon,
+      city: ''
+      
+    };
+    forecast.push(newForecast);
+  }
+   
   return forecast;
   }
   // TODO: Complete getWeatherForCity method
