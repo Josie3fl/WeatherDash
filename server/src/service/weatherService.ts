@@ -119,7 +119,7 @@ class WeatherService {
    
    for (let i=0; i< oneForecastADay.length && i < 5; i++) {
     const data = oneForecastADay[i];
-    const newForecast: Weather = {
+    const newForecast: Weather =  {
       temp: data.main.temp,
       humidity: data.main.humidity,
       description: data.weather[0].description,
@@ -129,6 +129,7 @@ class WeatherService {
       windSpeed: data.wind.speed
       
     };
+
     forecast.push(newForecast);
   }
    

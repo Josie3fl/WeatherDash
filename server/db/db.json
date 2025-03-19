@@ -1,45 +1,5 @@
 [
   {
-    "id": "5d6c0b52-e61a-4404-9799-bae3b5349595",
-    "name": "Orlando"
-  },
-  {
-    "id": "a434c02e-80e8-4df5-9a6e-a914e8a45edb",
-    "name": "San Diego"
-  },
-  {
-    "id": "9e3a2c03-1e23-4ba5-a9c3-cb9437b04d1c",
-    "name": "Chicago"
-  },
-  {
-    "id": "98832aab-051c-4583-8dbf-b2318be349a0",
-    "name": "Miami"
-  },
-  {
-    "id": "1b7e65be-fce7-4202-bdde-bed765d55390",
-    "name": "Orlando"
-  },
-  {
-    "id": "f8f63690-0cfc-4934-bce8-da9057b8ed8b",
-    "name": "San Diego"
-  },
-  {
-    "id": "1ccb8770-8de2-49f2-a343-a64239323672",
-    "name": "Chicago"
-  },
-  {
-    "id": "7a29e204-756e-4f9d-854f-8497ee27f324",
-    "name": "Miami"
-  },
-  {
-    "id": "5ac87b05-ae1b-4e02-baae-9474ee8ddff9",
-    "name": "Orlando"
-  },
-  {
-    "id": "4d6c4f26-045a-4cf9-8122-8d7b128c9769",
-    "name": "San Diego"
-  },
-  {
     "id": "167fba84-2b4d-4674-9af2-58b08dee3a39",
     "name": "Chicago"
   },
@@ -50,5 +10,29 @@
   {
     "id": "c28adffb-cc29-4a9b-9a04-cf9ce3246798",
     "name": "Orlando"
+  },
+  {
+    "id": "364bfb47-9979-41f9-9b62-34234e97aad5",
+    "name": "San Diego"
+  },
+  {
+    "id": "f79c9f09-61b7-4963-92d9-1c4be32c4eb3",
+    "name": "Chicago"
+  },
+  {
+    "id": "671d26ea-7007-4087-883f-ad661eba0d73",
+    "name": "Miami"
+  },
+  {
+    "id": "6036bb29-e522-4d3b-8a89-d460f1180c18",
+    "name": "Orlando"
+  },
+  {
+    "id": "126a7702-c718-4263-a768-92855aa4b4a7",
+    "name": "San Diego"
+  },
+  {
+    "id": "b30ced1d-6908-4f2a-b83a-dab1b4ae2007",
+    "name": "Chicago"
   }
 ]
