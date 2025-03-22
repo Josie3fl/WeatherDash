@@ -10,8 +10,10 @@ with the capacity of showing at the same time a forecast for the next five days.
 ## Installation
 
 Installation of this app is very simple simply click on the link bellow:
+https://weatherdash-fmml.onrender.com
 
 Or visit my repository:
+https://github.com/Josie3fl/WeatherDash.git
 
 
 ## Usage
@@ -32,4 +34,5 @@ Chandler
 
 ## License
 Actual API source was https://openweathermap.org/forecast5
+Render- Please be reminded that my app is being deployed in a free version of Render, please give it a moment the first time to run properly.
 
